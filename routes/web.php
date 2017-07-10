@@ -20,3 +20,9 @@ Route::get('/', function () {
 });
 
 Route::get('/login','AuthController@getlogin');
+Route::get('/register', 'AuthController@register');
+Route::post('addregister', 'AuthController@store');
+Route::post('/login','AuthController@postlogin');
+Route::get('logout','AuthController@logout');
+
+Route::get('/user/index', 'UserController@index');

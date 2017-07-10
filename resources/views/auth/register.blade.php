@@ -7,23 +7,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Login Form</title>
+	<title>Registration Form</title>
 
 	<link rel="stylesheet" href="assets/demo.css">
-	<link rel="stylesheet" href="assets/form-login.css">
+	<link rel="stylesheet" href="assets/form-register.css">
 
 </head>
 
-
 	<header>
-		<h1>Form Login</h1>
+		<h1>Form Register</h1>
         <a href="http://tutorialzine.com/2015/07/freebie-7-clean-and-responsive-forms/">Download</a>
     </header>
 
     <ul>
         {{-- <li><a href="index.html">Basic</a></li> --}}
-        <li><a href="/register">Register</a></li>
-        <li><a href="form-login.html" class="active">Login</a></li>
+        <li><a href="/register" class="active">Register</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/">Home</a></li>
         {{-- <li><a href="form-mini.html">Mini</a></li>
         <li><a href="form-labels-on-top.html">Labels on Top</a></li>
         <li><a href="form-validation.html">Validation</a></li>
@@ -33,17 +33,24 @@
 
     <div class="main-content">
 
-        <!-- You only need this form and the form-login.css -->
+        <!-- You only need this form and the form-register.css -->
 
-        <form class="form-login" method="post" action="/login">
-         {{ csrf_field() }}
+        <form class="form-register" method="post" action="/addregister">
 
-            <div class="form-log-in-with-email">
+        {{ csrf_field() }}
+            <div class="form-register-with-email">
 
                 <div class="form-white-background">
 
                     <div class="form-title-row">
-                        <h1>Log in</h1>
+                        <h1>Create an account</h1>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Name</span>
+                            <input type="text" name="fullname">
+                        </label>
                     </div>
 
                     <div class="form-row">
@@ -59,15 +66,27 @@
                             <input type="password" name="password">
                         </label>
                     </div>
+                     <div class="form-row">
+                        <label>
+                            <span>RetypePassword</span>
+                            <input type="retypepassword" name="retypepassword">
+                        </label>
+                    </div>
 
                     <div class="form-row">
-                        <button type="submit">Log in</button>
+                        <label class="form-checkbox">
+                            <input type="checkbox" name="checkbox" checked>
+                            <span>I agree to the <a href="#">terms and conditions</a></span>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <button type="submit">Register</button>
                     </div>
 
                 </div>
 
-                <a href="#" class="form-forgotten-password">Forgotten password &middot;</a>
-                <a href="#" class="form-create-an-account">Create an account &rarr;</a>
+                <a href="#" class="form-log-in-with-existing">Already have an account? Login here &rarr;</a>
 
             </div>
 
