@@ -19,10 +19,14 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/login','AuthController@getlogin');
+
+Route::get('/login','AuthController@getlogin')->name('login');
 Route::get('/register', 'AuthController@register');
-Route::post('addregister', 'AuthController@store');
+Route::post('/addregister', 'AuthController@store');
 Route::post('/login','AuthController@postlogin');
 Route::get('logout','AuthController@logout');
 
+// Route::group(['middleware'=>['auth']],function ()  {
+    
 Route::get('/user/index', 'UserController@index');
+// });

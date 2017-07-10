@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content')
-      <div class="box-body">
+          <div class="box-body">
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>

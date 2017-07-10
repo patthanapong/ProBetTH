@@ -63,7 +63,7 @@
                     <li><a href="#contact">เกมส์เทเบิ้ล</a></li>
                     <li><a href="#contact">เกมส์อื่นๆ</a></li>
                     <li><a href="/user/index">โปรโมชั่น</a></li>
-                    <li style="float:right"><button id="myBtn">Open Modal</button></li>
+                    <li style="float:right"><button id="myBtn">Login</button></li>
                     <li style="float:right"><a href="/register">สมัครสมาชิก</a></li>
                     {{-- <li style="float:right"><a href="/login">ล็อคอิน</a></li> --}}
                     {{-- <li style="float:right"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></li>
@@ -74,6 +74,7 @@
                         @else
                             <a href="/login">เข้าสู่ระบบ</a> 
                         @endif</li>
+                 {{-- <li>{{ auth()->user()->fullname}}</li> --}}
                     
                     
                    
@@ -95,8 +96,8 @@
 
                                     <!-- You only need this form and the form-login.css -->
 
-                                    <form class="form-login" method="post" action="#">
-
+                                    <form class="form-login" method="post" action="/login">
+                                            {{ csrf_field() }}
                                         <div class="form-log-in-with-email">
 
                                             <div class="form-white-background">
