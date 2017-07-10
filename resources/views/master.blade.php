@@ -68,12 +68,12 @@
                     {{-- <li style="float:right"><a href="/login">ล็อคอิน</a></li> --}}
                     {{-- <li style="float:right"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></li>
                     <li style="float:right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button></li> --}}
-                     <li style="float:right">@if(auth()->check())
-                        <a href="/logout">ออกจากระบบ</a> 
-                            ( {{ auth()->user()->name}} )
+                     @if(auth()->check())
+                        <li style="float:right"><a href="/logout">ออกจากระบบ</a> </li>
+                        <li style="float:right"> <a href="#">{{ auth()->user()->fullname}}</a></li>
                         @else
                             <a href="/login">เข้าสู่ระบบ</a> 
-                        @endif</li>
+                        @endif
                  {{-- <li>{{ auth()->user()->fullname}}</li> --}}
                     
                     
