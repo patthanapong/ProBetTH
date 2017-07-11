@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="DataTemplate/css/Template.css">
      {{-- <link rel="stylesheet" href="DataTemplate/css/login.css">
      <link rel="stylesheet" href="DataTemplate/css/register.css"> --}}
@@ -11,6 +12,7 @@
 	{{-- <link rel="stylesheet" href="assets/form-login.css"> --}}
     {{-- <link rel="stylesheet" href="assets/demo.css"> --}}
 	<link rel="stylesheet" href="assets/form-register.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>ProBetTH</title>
 </head>
 
@@ -65,7 +67,7 @@
                    
                     <input type="email" name="email">
                      <input type="password" name="password">
-                    <button type="submit">Log in</button>
+                    <button type="submit" >เข้าสุ่ระบบ</button>
                     
                 </form>  
         
@@ -77,7 +79,7 @@
                     <li><a href="#contact">เกมส์เทเบิ้ล</a></li>
                     <li><a href="#contact">เกมส์อื่นๆ</a></li>
                     <li><a href="/user/index">โปรโมชั่น</a></li>
-                    <li style="float:right"><a href="#"> <button id="myBtn">register</button></li></a>
+                    <li style="float:right"><button id="myBtn" class="button button4">สมัครสมาชิก</button></li>
                     {{-- <li style="float:right"><a href="/register">สมัครสมาชิก</a></li> --}}
                      @if(auth()->check())
                         {{-- <li style="float:right"><a href="/logout">ออกจากระบบ</a> </li> --}}
@@ -91,7 +93,7 @@
                     <li style="float:right" class="dropdown">
                             <a href="javascript:void(0)" class="dropbtn">{{ auth()->user()->fullname}}</a>
                                 <div class="dropdown-content">
-                                    <a href="#">ข้อมูลส่วนตัว</a>
+                                    <a href="/proflie">ข้อมูลส่วนตัว</a>
                                     <a href="/logout">ออกจากระบบ</a>
                                 </div>
                     </li>

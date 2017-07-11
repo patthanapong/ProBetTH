@@ -27,6 +27,6 @@ Route::post('/login','AuthController@postlogin');
 Route::get('logout','AuthController@logout');
 
 // Route::group(['middleware'=>['auth']],function ()  {
-    
+Route::get('/proflie', 'ProfileController@proflie');  
 Route::get('/user/index', 'UserController@index');
 // });
