@@ -35,7 +35,7 @@
 
         <!-- You only need this form and the form-login.css -->
 
-        <form class="form-login" method="post" action="/login">
+        <form class="form-login" method="post" action="#">
          {{ csrf_field() }}
 
             <div class="form-log-in-with-email">

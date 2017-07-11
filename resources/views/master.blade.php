@@ -8,9 +8,13 @@
      {{-- <link rel="stylesheet" href="DataTemplate/css/login.css">
      <link rel="stylesheet" href="DataTemplate/css/register.css"> --}}
      	{{-- <link rel="stylesheet" href="assets/demo.css"> --}}
-	<link rel="stylesheet" href="assets/form-login.css">
-    <title>Document</title>
+	{{-- <link rel="stylesheet" href="assets/form-login.css"> --}}
+    {{-- <link rel="stylesheet" href="assets/demo.css"> --}}
+	<link rel="stylesheet" href="assets/form-register.css">
+    <title>ProBetTH</title>
 </head>
+
+
 <style>
 /* The Modal (background) */
 .modal {
@@ -55,6 +59,16 @@
 <div class="opacity">
     <div class="header">
         <h1>ProBetTH</h1>
+
+                <form class="form-login" method="post" action="/login">
+                     {{ csrf_field() }}
+                   
+                    <input type="email" name="email">
+                     <input type="password" name="password">
+                    <button type="submit">Log in</button>
+                    
+                </form>  
+        
     </div>
             <ul>
                     <li><a href="/">หน้าหลัก</a></li>
@@ -63,17 +77,33 @@
                     <li><a href="#contact">เกมส์เทเบิ้ล</a></li>
                     <li><a href="#contact">เกมส์อื่นๆ</a></li>
                     <li><a href="/user/index">โปรโมชั่น</a></li>
-                    <li style="float:right"><button id="myBtn">Login</button></li>
-                    <li style="float:right"><a href="/register">สมัครสมาชิก</a></li>
+                    <li style="float:right"><a href="#"> <button id="myBtn">register</button></li></a>
+                    {{-- <li style="float:right"><a href="/register">สมัครสมาชิก</a></li> --}}
+                     @if(auth()->check())
+                        {{-- <li style="float:right"><a href="/logout">ออกจากระบบ</a> </li> --}}
+
+                          
+
+                        {{-- <li style="float:right"> <a href="#">{{ auth()->user()->fullname}}</a></li> --}}
+                        {{-- @else
+                            <li style="float:right"> <a href="/login">เข้าสู่ระบบ</a> </li> --}}
+
+                    <li style="float:right" class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn">{{ auth()->user()->fullname}}</a>
+                                <div class="dropdown-content">
+                                    <a href="#">ข้อมูลส่วนตัว</a>
+                                    <a href="/logout">ออกจากระบบ</a>
+                                </div>
+                    </li>
+                        @endif
+                   
+                        
+                 
+                    
                     {{-- <li style="float:right"><a href="/login">ล็อคอิน</a></li> --}}
                     {{-- <li style="float:right"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></li>
                     <li style="float:right"><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button></li> --}}
-                     @if(auth()->check())
-                        <li style="float:right"><a href="/logout">ออกจากระบบ</a> </li>
-                        <li style="float:right"> <a href="#">{{ auth()->user()->fullname}}</a></li>
-                        @else
-                            <li style="float:right"> <a href="/login">เข้าสู่ระบบ</a> </li>
-                        @endif
+                    
                  {{-- <li>{{ auth()->user()->fullname}}</li> --}}
                     
                     
@@ -94,58 +124,79 @@
 
                                 <div class="main-content">
 
-                                    <!-- You only need this form and the form-login.css -->
+        <!-- You only need this form and the form-register.css -->
 
-                                    <form class="form-login" method="post" action="/login">
-                                            {{ csrf_field() }}
-                                        <div class="form-log-in-with-email">
+        <form class="form-register" method="post" action="/addregister">
 
-                                            <div class="form-white-background">
+        {{ csrf_field() }}
+            <div class="form-register-with-email">
 
-                                                <div class="form-title-row">
-                                                    <h1>Log in</h1>
-                                                </div>
+                <div class="form-white-background">
 
-                                                <div class="form-row">
-                                                    <label>
-                                                        <span>Email</span>
-                                                        <input type="email" name="email">
-                                                    </label>
-                                                </div>
+                    <div class="form-title-row">
+                        <h1>Create an account</h1>
+                    </div>
 
-                                                <div class="form-row">
-                                                    <label>
-                                                        <span>Password</span>
-                                                        <input type="password" name="password">
-                                                    </label>
-                                                </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Name</span>
+                            <input type="text" name="fullname">
+                        </label>
+                    </div>
 
-                                                <div class="form-row">
-                                                    <button type="submit">Log in</button>
-                                                </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email">
+                        </label>
+                    </div>
 
-                                            </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Password</span>
+                            <input type="password" name="password">
+                        </label>
+                    </div>
+                     <div class="form-row">
+                        <label>
+                            <span>RetypePassword</span>
+                            <input type="retypepassword" name="retypepassword">
+                        </label>
+                    </div>
 
-                                            <a href="#" class="form-forgotten-password">Forgotten password &middot;</a>
-                                            <a href="#" class="form-create-an-account">Create an account &rarr;</a>
+                    <div class="form-row">
+                        <label class="form-checkbox">
+                            <input type="checkbox" name="checkbox" checked>
+                            <span>I agree to the <a href="#">terms and conditions</a></span>
+                        </label>
+                    </div>
 
-                                        </div>
+                    <div class="form-row">
+                        <button type="submit">Register</button>
+                    </div>
 
-                                        <div class="form-sign-in-with-social">
+                </div>
 
-                                            <div class="form-row form-title-row">
-                                                <span class="form-title">Sign in with</span>
-                                            </div>
+                <a href="#" class="form-log-in-with-existing">Already have an account? Login here &rarr;</a>
 
-                                            <a href="#" class="form-google-button">Google</a>
-                                            <a href="#" class="form-facebook-button">Facebook</a>
-                                            <a href="#" class="form-twitter-button">Twitter</a>
+            </div>
 
-                                        </div>
+            <div class="form-sign-in-with-social">
 
-                                    </form>
+                <div class="form-row form-title-row">
+                    <span class="form-title">Sign in with</span>
+                </div>
 
-                                </div>
+                <a href="#" class="form-google-button">Google</a>
+                <a href="#" class="form-facebook-button">Facebook</a>
+                <a href="#" class="form-twitter-button">Twitter</a>
+
+            </div>
+
+        </form>
+
+    </div>
+
 
                     </div>
                     <div class="modal-footer">
@@ -192,6 +243,7 @@ window.onclick = function(event) {
     }
 }
 </script>
+
 
 
 </html>
