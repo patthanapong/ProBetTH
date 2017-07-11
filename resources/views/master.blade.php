@@ -72,7 +72,7 @@
                         <li style="float:right"><a href="/logout">ออกจากระบบ</a> </li>
                         <li style="float:right"> <a href="#">{{ auth()->user()->fullname}}</a></li>
                         @else
-                            <a href="/login">เข้าสู่ระบบ</a> 
+                            <li style="float:right"> <a href="/login">เข้าสู่ระบบ</a> </li>
                         @endif
                  {{-- <li>{{ auth()->user()->fullname}}</li> --}}
                     
