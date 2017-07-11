@@ -286,7 +286,7 @@ body {font-family: Verdana,sans-serif;margin:0}
 
 
 /*dropdown*/
-ul {
+/*ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -339,7 +339,7 @@ li.dropdown {
 
 .button {
     background-color: #4CAF50; /* Green */
-    border: none;
+    /*border: none;
     color: white;
     padding: 10px 12px;
     text-align: center;
@@ -348,7 +348,7 @@ li.dropdown {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-}
+}*/
 
 .button2 {background-color: #008CBA;} /* Blue */
 .button3 {background-color: #f44336;} /* Red */ 
