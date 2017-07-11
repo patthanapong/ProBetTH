@@ -82,7 +82,9 @@
                     <li style="float:right"><button id="myBtn" class="button button4">สมัครสมาชิก</button></li>
                     {{-- <li style="float:right"><a href="/register">สมัครสมาชิก</a></li> --}}
                      @if(auth()->check())
-                        {{-- <li style="float:right"><a href="/logout">ออกจากระบบ</a> </li> --}}
+                        <li style="float:right"><a href="/logout" class="button button3">ออกจากระบบ</a> </li>
+                        <li style="float:right"><a href="#">{{ auth()->user()->fullname}}</a></li>
+                        
 
                           
 
@@ -90,13 +92,13 @@
                         {{-- @else
                             <li style="float:right"> <a href="/login">เข้าสู่ระบบ</a> </li> --}}
 
-                    <li style="float:right" class="dropdown">
+                    {{-- <li style="float:right" class="dropdown">
                             <a href="javascript:void(0)" class="dropbtn">{{ auth()->user()->fullname}}</a>
                                 <div class="dropdown-content">
                                     <a href="/proflie">ข้อมูลส่วนตัว</a>
                                     <a href="/logout">ออกจากระบบ</a>
                                 </div>
-                    </li>
+                    </li> --}}
                         @endif
                    
                         
